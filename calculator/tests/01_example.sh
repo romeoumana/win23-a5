@@ -29,3 +29,51 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+# Test 04: Division 1
+if [[ $($CALCULATOR 10 / 2) -ne 5 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (10 / 2) failed to produce 5 as an output!'
+  exit 1
+fi
+
+# Test 05: Division 2
+if [[ $($CALCULATOR 0 / 2) -ne 0 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (0 / 2) failed to produce 0 as an output!'
+  exit 1
+fi
+
+# Test 06: Subtraction 1
+if [[ $($CALCULATOR 10 - 2) -ne 8 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (10 - 2) failed to produce 8 as an output!'
+  exit 1
+fi
+
+# Test 07: Subtraction 2
+if [[ $($CALCULATOR 10 - 15) -ne -5 ]]; then  # If the output of the program is not -5...
+  echo 'ERROR! A valid run of the calculator (10 - 15) failed to produce -5 as an output!'
+  exit 1
+fi
+
+# Test 08: Addition 1
+if [[ $($CALCULATOR 10 + 10) -ne 20 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (10 + 10) failed to produce 20 as an output!'
+  exit 1
+fi
+
+# Test 09: Addition 2
+if [[ $($CALCULATOR 0 + 0) -ne -0 ]]; then  # If the output of the program is not -5...
+  echo 'ERROR! A valid run of the calculator (0 + 0) failed to produce 0 as an output!'
+  exit 1
+fi
+
+# Test 10: Multiplication 1
+if [[ $($CALCULATOR 10 '*' 10) -ne 100 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (10 * 10) failed to produce 100 as an output!'
+  exit 1
+fi
+
+# Test 11: Multiplication 2
+if [[ $($CALCULATOR 0 '*' 200) -ne -0 ]]; then  # If the output of the program is not -5...
+  echo 'ERROR! A valid run of the calculator (200 * 0) failed to produce 0 as an output!'
+  exit 1
+fi
